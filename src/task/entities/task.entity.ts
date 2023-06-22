@@ -1,5 +1,5 @@
 import { MinLength } from 'class-validator';
-import { Member } from 'src/member/entities/member.entity';
+import { Member } from '../../member/entities/member.entity';
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'task' })
