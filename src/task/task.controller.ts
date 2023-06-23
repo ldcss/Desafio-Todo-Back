@@ -8,13 +8,16 @@ export class TaskController {
   constructor(private readonly taskService: TaskService) {}
 
   @Post()
-  async create(@Body() createMemberDto: CreateTaskDto, @Res() res: Response) {
-    return 'this action create a task';
+  async create(@Body() createTaskDto: CreateTaskDto, @Res() res: Response) {
+    const createdTask = await this.taskService.create(createTaskDto);
+    console.log(createdTask);
+    return res.status(201).send(createdTask);
   }
 
   @Get()
   async getAll(@Res() res: Response) {
-    return 'this action gets all tasks';
+    const tasks = await this.taskService.findAll();
+    return res.status(200).send(tasks);
   }
 
   @Put()

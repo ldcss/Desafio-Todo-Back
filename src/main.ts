@@ -10,10 +10,7 @@ async function bootstrap() {
     .then(() => console.log('LOG [Typeorm] Success connection'))
     .catch(error => console.log(error));
 
-  app.enableCors({
-    origin: 'https://localhost:3001',
-    credentials: true,
-  });
+  app.enableCors();
 
   await app.listen(3000);
 }

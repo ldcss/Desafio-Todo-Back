@@ -14,7 +14,8 @@ export class MemberController {
 
   @Get()
   async getAll(@Res() res: Response) {
-    return 'this action gets all members';
+    const members = await this.memberService.findAll();
+    return res.status(200).send(members);
   }
 
   @Put()

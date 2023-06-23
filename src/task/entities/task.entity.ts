@@ -17,8 +17,8 @@ export class Task {
   @Column({ name: 'finished' })
   finished!: boolean;
 
-  @Column({ name: 'finishedAt', type: 'timestamptz' })
-  finishedAt!: Date;
+  @Column({ name: 'finishedAt', type: 'timestamp', nullable: true })
+  finishedAt?: Date;
 
   @Column({ name: 'priority', default: 'Baixa' })
   priority!: string;
