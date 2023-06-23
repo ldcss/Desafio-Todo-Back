@@ -6,7 +6,6 @@ import { AppDataSource } from 'src/app.datasource';
 @Injectable()
 export class TaskService {
   async create(createTaskDto: CreateTaskDto) {
-    console.log('to no create');
     const task = new Task();
     task.name = createTaskDto.name;
     task.description = createTaskDto.description;

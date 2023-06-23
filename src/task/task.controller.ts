@@ -10,7 +10,6 @@ export class TaskController {
   @Post()
   async create(@Body() createTaskDto: CreateTaskDto, @Res() res: Response) {
     const createdTask = await this.taskService.create(createTaskDto);
-    console.log(createdTask);
     return res.status(201).send(createdTask);
   }
 
