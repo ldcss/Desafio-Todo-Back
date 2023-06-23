@@ -9,7 +9,8 @@ export class MemberController {
 
   @Post()
   async create(@Body() createMemberDto: CreateMemberDto, @Res() res: Response) {
-    return 'this action create a member';
+    const createdMember = await this.memberService.create(createMemberDto);
+    return res.status(201).send(createdMember);
   }
 
   @Get()
