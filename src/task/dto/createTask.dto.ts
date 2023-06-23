@@ -19,5 +19,5 @@ export class CreateTaskDto {
   @IsNotEmpty()
   priority!: string;
 
-  member?: Member;
+  member?: string;
 }
